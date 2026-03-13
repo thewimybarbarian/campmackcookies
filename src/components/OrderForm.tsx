@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useCart } from "@/context/CartContext";
 
 const COOKIE_TYPES = [
   { id: "chocolate-chip", name: "Chocolate Chip", price: 3 },
@@ -12,20 +13,12 @@ const COOKIE_TYPES = [
 ];
 
 export default function OrderForm() {
-  const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const { quantities, updateQuantity, clearCart } = useCart();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleQuantityChange = (id: string, delta: number) => {
-    setQuantities((prev) => {
-      const current = prev[id] || 0;
-      const next = Math.max(0, current + delta);
-      if (next === 0) {
-        const { [id]: _, ...rest } = prev;
-        return rest;
-      }
-      return { ...prev, [id]: next };
-    });
+    updateQuantity(id, delta);
   };
 
   const totalItems = Object.values(quantities).reduce((a, b) => a + b, 0);
@@ -43,7 +36,7 @@ export default function OrderForm() {
     
     setIsSubmitting(false);
     setIsSuccess(true);
-    setQuantities({});
+    clearCart();
   };
 
   if (isSuccess) {

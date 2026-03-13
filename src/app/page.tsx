@@ -1,8 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import OrderForm from "@/components/OrderForm";
 import PromoPopup from "@/components/PromoPopup";
+import { useCart } from "@/context/CartContext";
 
 export default function Home() {
+  const { addCookie } = useCart();
+
+  const handleSelectCookie = (id: string) => {
+    addCookie(id);
+    document.getElementById("order")?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <main className="min-h-screen" style={{ backgroundColor: "var(--color-cream)" }}>
       <PromoPopup />
@@ -231,7 +240,9 @@ export default function Home() {
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
               Buttery dough with semi-sweet chocolate chips
             </p>
-            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+            <button 
+              onClick={() => handleSelectCookie("chocolate-chip")}
+              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -245,7 +256,9 @@ export default function Home() {
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
               Vibrant blue dough with Oreo bits and white chocolate
             </p>
-            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+            <button 
+              onClick={() => handleSelectCookie("cookie-monster")}
+              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -259,7 +272,9 @@ export default function Home() {
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
               Swirls of brown sugar streusel and sweet icing glaze
             </p>
-            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+            <button 
+              onClick={() => handleSelectCookie("cinnamon-roll")}
+              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -273,7 +288,9 @@ export default function Home() {
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
               Cocoa-infused red dough with melting white chocolate chunks
             </p>
-            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+            <button 
+              onClick={() => handleSelectCookie("red-velvet")}
+              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -287,7 +304,9 @@ export default function Home() {
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
               Classic peanut butter cup taste, studded with real Reese's Pieces
             </p>
-            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+            <button 
+              onClick={() => handleSelectCookie("reeses")}
+              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -301,7 +320,9 @@ export default function Home() {
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
               Vanilla sugar cookie celebration with rainbow sprinkles
             </p>
-            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+            <button 
+              onClick={() => handleSelectCookie("sprinkle")}
+              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
