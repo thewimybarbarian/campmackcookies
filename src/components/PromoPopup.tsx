@@ -31,7 +31,7 @@ export default function PromoPopup() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-6 py-8 bg-black/50 backdrop-blur-sm">
       <div
-        className="relative w-full max-w-[320px] md:max-w-4xl max-h-[85vh] overflow-y-auto bg-white rounded-2xl md:rounded-3xl shadow-2xl flex flex-col md:flex-row"
+        className="relative w-[calc(100%-2rem)] max-w-sm md:max-w-4xl max-h-[85vh] overflow-y-auto bg-white rounded-2xl md:rounded-3xl shadow-2xl flex flex-col md:flex-row mx-auto"
         style={{ border: "3px solid var(--color-chocolate)" }}
       >
         {/* Close Button */}
@@ -82,18 +82,7 @@ export default function PromoPopup() {
             </div>
           ) : (
             <div>
-              {/* Mobile-only small coupon image */}
-              <div className="flex justify-center mb-3 md:hidden">
-                <Image
-                  src="/coupon2.jpg"
-                  alt="Camp Mack Cookie Co. 20% Off Coupon"
-                  width={160}
-                  height={160}
-                  className="rounded-lg object-contain drop-shadow-md"
-                />
-              </div>
-
-              <div className="flex justify-center mb-1 md:mb-4 text-2xl md:text-4xl">🍪</div>
+              <div className="flex justify-center mb-2 md:mb-4 text-2xl md:text-4xl">🍪</div>
               <h2
                 className="text-2xl md:text-5xl font-extrabold mb-2 md:mb-4 text-center leading-tight"
                 style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}
