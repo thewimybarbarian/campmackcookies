@@ -202,8 +202,8 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* Chocolate Chip */}
           <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
-            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
-               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">🍪</span>
+            <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <Image src="/c1.png" alt="Classic Chocolate Chip Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Classic Chocolate Chip</h3>
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
@@ -216,8 +216,8 @@ export default function Home() {
 
           {/* Cookie Monster */}
           <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
-            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
-               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">💙</span>
+            <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <Image src="/c2.png" alt="Blue Cookie Monster Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Blue Cookie Monster</h3>
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
@@ -230,8 +230,8 @@ export default function Home() {
 
           {/* Cinnamon Roll */}
           <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
-            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
-               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">🤎</span>
+            <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <Image src="/c3.png" alt="Cinnamon Roll Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Cinnamon Roll</h3>
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
@@ -244,8 +244,8 @@ export default function Home() {
 
           {/* Red Velvet */}
           <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
-            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
-               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">❤️</span>
+            <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <Image src="/c4.png" alt="Red Velvet Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Red Velvet</h3>
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
@@ -258,8 +258,8 @@ export default function Home() {
 
           {/* Reese's */}
           <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
-            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
-               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">🧡</span>
+            <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <Image src="/c5.png" alt="Peanut Butter & Reese's Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Peanut Butter & Reese's</h3>
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
@@ -272,8 +272,8 @@ export default function Home() {
 
           {/* Sprinkle */}
           <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
-            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
-               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">🌈</span>
+            <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <Image src="/c6.png" alt="Confetti Sprinkle Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Confetti Sprinkle</h3>
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
