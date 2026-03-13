@@ -231,7 +231,7 @@ export default function Home() {
           {/* Cinnamon Roll */}
           <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
-               <Image src="/c3.png" alt="Cinnamon Roll Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
+               <Image src="/c4.png" alt="Cinnamon Roll Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Cinnamon Roll</h3>
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
@@ -245,7 +245,7 @@ export default function Home() {
           {/* Red Velvet */}
           <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
-               <Image src="/c4.png" alt="Red Velvet Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
+               <Image src="/c3.png" alt="Red Velvet Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Red Velvet</h3>
             <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
