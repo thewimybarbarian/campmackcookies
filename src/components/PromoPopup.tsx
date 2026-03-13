@@ -29,10 +29,10 @@ export default function PromoPopup() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-6 py-8 bg-black/50 backdrop-blur-sm">
       <div
-        className="relative w-full max-w-md md:max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl flex flex-col md:flex-row"
-        style={{ border: "4px solid var(--color-chocolate)" }}
+        className="relative w-full max-w-[320px] md:max-w-4xl max-h-[85vh] overflow-y-auto bg-white rounded-2xl md:rounded-3xl shadow-2xl flex flex-col md:flex-row"
+        style={{ border: "3px solid var(--color-chocolate)" }}
       >
         {/* Close Button */}
         <button
@@ -61,7 +61,7 @@ export default function PromoPopup() {
 
         {/* Content Section */}
         <div
-          className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center"
+          className="w-full md:w-1/2 p-5 md:p-12 flex flex-col justify-center"
           style={{ backgroundColor: "var(--color-vanilla)" }}
         >
           {hasSubmitted ? (
@@ -83,17 +83,17 @@ export default function PromoPopup() {
           ) : (
             <div>
               {/* Mobile-only small coupon image */}
-              <div className="flex justify-center mb-4 md:hidden">
+              <div className="flex justify-center mb-3 md:hidden">
                 <Image
                   src="/coupon2.jpg"
                   alt="Camp Mack Cookie Co. 20% Off Coupon"
-                  width={200}
-                  height={200}
-                  className="rounded-xl object-contain drop-shadow-md"
+                  width={160}
+                  height={160}
+                  className="rounded-lg object-contain drop-shadow-md"
                 />
               </div>
 
-              <div className="flex justify-center mb-2 md:mb-4 text-3xl md:text-4xl">🍪</div>
+              <div className="flex justify-center mb-1 md:mb-4 text-2xl md:text-4xl">🍪</div>
               <h2
                 className="text-2xl md:text-5xl font-extrabold mb-2 md:mb-4 text-center leading-tight"
                 style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}
