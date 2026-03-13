@@ -56,14 +56,16 @@ export default function PromoPopup() {
         </button>
 
         {/* Image Section */}
-        <div className="w-full md:w-1/2 relative min-h-[250px] md:min-h-[450px] bg-[#FAE8C8]">
-          <Image 
-            src="/coupon2.jpg" 
-            alt="Camp Mack Cookie Co. 20% Off Coupon" 
-            fill
-            className="object-cover object-center"
-            priority
-          />
+        <div className="w-full md:w-1/2 relative min-h-[250px] md:min-h-[450px] bg-[#FAE8C8] flex items-center justify-center p-4 md:p-8">
+          <div className="relative w-full h-full min-h-[200px] md:min-h-[350px]">
+            <Image 
+              src="/coupon2.jpg" 
+              alt="Camp Mack Cookie Co. 20% Off Coupon" 
+              fill
+              className="object-contain drop-shadow-md"
+              priority
+            />
+          </div>
         </div>
 
         {/* Content Section */}
