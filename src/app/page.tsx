@@ -127,39 +127,61 @@ export default function Home() {
 
         </div>
 
-        {/* Wavy bottom divider */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            viewBox="0 0 1440 80"
-            preserveAspectRatio="none"
-            className="w-full h-16 md:h-20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
-              fill="#FAE8C8"
-            />
-          </svg>
-        </div>
       </section>
 
       {/* Menu Section */}
       <section id="menu" className="relative pb-24">
-        {/* Top Gradient Background */}
-        <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] z-0" />
-        
-        {/* Bottom Wood Texture Background */}
+        {/* Full Menu Background (Wood) */}
         <div 
-          className="absolute top-[400px] left-0 w-full h-[calc(100%-400px)] z-0" 
+          className="absolute top-0 left-0 w-full h-full z-[0]" 
           style={{
             backgroundColor: "#F3EAE0",
             backgroundImage: "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
-            opacity: 0.8
+            opacity: 0.95
           }} 
         />
         
+        {/* Top Gradient Overlay blending into Wood */}
+        <div 
+          className="absolute top-0 left-0 w-full h-[550px] bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] z-[1]" 
+          style={{
+            maskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)"
+          }}
+        />
+
+        {/* Wavy top divider from Hero */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-[2]" style={{ transform: "rotate(180deg)" }}>
+          <svg
+            viewBox="0 0 1440 80"
+            preserveAspectRatio="none"
+            className="w-full h-12 md:h-20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
+              fill="var(--color-cream)"
+            />
+          </svg>
+        </div>
+
+        {/* Wavy bottom divider leading to Order Section */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-[2]">
+          <svg
+            viewBox="0 0 1440 80"
+            preserveAspectRatio="none"
+            className="w-full h-12 md:h-20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
+              fill="var(--color-vanilla)"
+            />
+          </svg>
+        </div>
+        
         {/* Playful Pennant Bunting */}
-        <div className="relative z-10 w-full flex justify-center pt-8 overflow-hidden pointer-events-none">
+        <div className="relative z-10 w-full flex justify-center pt-16 md:pt-20 overflow-hidden pointer-events-none">
           <svg width="400" height="40" viewBox="0 0 400 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-70 drop-shadow-sm">
             <path d="M0,0 Q200,40 400,0" stroke="#4A2912" strokeWidth="1" strokeDasharray="4 4" fill="none"/>
             <polygon points="40,4 20,24 60,20" fill="#FFB6C1" />
