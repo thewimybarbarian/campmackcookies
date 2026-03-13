@@ -64,11 +64,11 @@ export default function Home() {
               }}
             />
             <Image
-              src="/logo-2.png"
+              src="/logo-full.png"
               alt="Camp Mack Cookie Co."
               width={480}
               height={480}
-              className="relative drop-shadow-2xl"
+              className="relative rounded-2xl drop-shadow-2xl"
               priority
             />
           </div>
