@@ -17,16 +17,15 @@ export default function Home() {
       <PromoPopup />
       {/* Navbar */}
       <nav className="flex items-center justify-between px-6 py-5 md:px-12">
-        <div className="flex items-center gap-3">
-          <Image 
-            src="/logo-2.png" 
-            alt="Camp Mack Cookies Logo" 
-            width={80} 
-            height={80} 
-            className="rounded-full drop-shadow-md"
+        <div className="flex items-center gap-2">
+          <Image
+            src="/cookie-icon.png"
+            alt="Cookie icon"
+            width={36}
+            height={36}
           />
           <span
-            className="text-2xl font-extrabold tracking-tight hidden sm:block"
+            className="text-2xl font-extrabold tracking-tight"
             style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}
           >
             Camp Mack Cookies
@@ -132,6 +131,24 @@ export default function Home() {
             >
               See the Menu
             </a>
+          </div>
+
+          {/* Header product shot */}
+          <div className="w-full max-w-4xl mt-4">
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(74,41,18,0.15)]">
+              <Image
+                src="/header.png"
+                alt="Camp Mack Cookie Co. fresh-baked cookie collection"
+                width={1200}
+                height={600}
+                className="w-full h-auto object-cover"
+                priority
+              />
+              <div
+                className="absolute inset-0 pointer-events-none rounded-3xl"
+                style={{ boxShadow: "inset 0 0 40px rgba(74,41,18,0.08)" }}
+              />
+            </div>
           </div>
 
         </div>
@@ -342,6 +359,142 @@ export default function Home() {
       >
         <OrderForm />
       </section>
+
+      {/* About Section */}
+      <section id="about" className="relative py-24 px-6 md:px-12" style={{ backgroundColor: "var(--color-cream)" }}>
+        {/* Wavy top divider */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none" style={{ transform: "rotate(180deg)" }}>
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full h-12 md:h-20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="var(--color-vanilla)" />
+          </svg>
+        </div>
+
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          {/* Image */}
+          <div className="relative flex-shrink-0">
+            <div
+              className="absolute rounded-full"
+              style={{
+                width: "320px",
+                height: "320px",
+                background: "radial-gradient(circle, #FAE8C8 0%, transparent 70%)",
+                filter: "blur(24px)",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+            <Image
+              src="/image2.png"
+              alt="Camp Mack Cookie Co."
+              width={360}
+              height={360}
+              className="relative drop-shadow-xl"
+            />
+          </div>
+
+          {/* Copy */}
+          <div className="text-center md:text-left">
+            <h2
+              className="text-4xl md:text-5xl font-extrabold mb-6"
+              style={{ fontFamily: "var(--font-oleo)", color: "var(--color-chocolate)" }}
+            >
+              The Story Behind the Cookies
+            </h2>
+            <p
+              className="text-lg leading-relaxed mb-4"
+              style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}
+            >
+              Camp Mack Cookie Co. was born in a small Arizona kitchen with a big dream. What
+              started as a passion for baking became something bigger — a way to bring people
+              together, one cookie at a time.
+            </p>
+            <p
+              className="text-lg leading-relaxed mb-4"
+              style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}
+            >
+              Behind every batch is a future doctor putting herself through medical school, one
+              cookie at a time. She believes that quality food made with real ingredients and
+              real love can make a real difference — for her community, her customers, and the
+              country she&rsquo;s proud to serve.
+            </p>
+            <p
+              className="text-lg leading-relaxed font-semibold"
+              style={{ fontFamily: "var(--font-nunito)", color: "var(--color-chocolate)" }}
+            >
+              Every cookie you order fuels a dream and feeds a community.
+              That&rsquo;s the Camp Mack way.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ backgroundColor: "var(--color-chocolate)" }} className="py-12 px-6 md:px-12">
+        <div className="max-w-5xl mx-auto flex flex-col items-center gap-8">
+          {/* Logo + Name */}
+          <div className="flex items-center gap-2">
+            <Image
+              src="/cookie-icon-white.png"
+              alt="Cookie icon"
+              width={36}
+              height={36}
+            />
+            <span
+              className="text-xl font-extrabold tracking-tight"
+              style={{ fontFamily: "var(--font-baloo)", color: "var(--color-cream)" }}
+            >
+              Camp Mack Cookie Co.
+            </span>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-6">
+            <a
+              href="https://www.instagram.com/camp_mack_cookies/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-all hover:scale-105"
+              style={{ backgroundColor: "var(--color-caramel)", color: "#fff", fontFamily: "var(--font-nunito)" }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+              Instagram
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61588434764211"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-all hover:scale-105"
+              style={{ backgroundColor: "var(--color-caramel)", color: "#fff", fontFamily: "var(--font-nunito)" }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Facebook
+            </a>
+          </div>
+
+          {/* Quick Links */}
+          <div
+            className="flex items-center gap-6 text-sm font-semibold"
+            style={{ fontFamily: "var(--font-nunito)", color: "var(--color-sand)" }}
+          >
+            <a href="#menu" className="hover:opacity-70 transition-opacity">Menu</a>
+            <a href="#order" className="hover:opacity-70 transition-opacity">Order</a>
+            <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
+          </div>
+
+          {/* Bottom */}
+          <p
+            className="text-xs"
+            style={{ fontFamily: "var(--font-nunito)", color: "var(--color-sand)", opacity: 0.5 }}
+          >
+            &copy; {new Date().getFullYear()} Camp Mack Cookie Co. Baked with love in Arizona.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
