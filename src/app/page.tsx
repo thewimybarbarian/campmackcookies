@@ -19,7 +19,7 @@ export default function Home() {
       <nav className="flex items-center justify-between px-6 py-5 md:px-12">
         <div className="flex items-center gap-3">
           <Image 
-            src="/logo.png" 
+            src="/logo-2.png" 
             alt="Camp Mack Cookies Logo" 
             width={80} 
             height={80} 
@@ -65,7 +65,7 @@ export default function Home() {
               }}
             />
             <Image
-              src="/image2.png"
+              src="/logo-2.png"
               alt="Camp Mack Cookie Co."
               width={480}
               height={480}
