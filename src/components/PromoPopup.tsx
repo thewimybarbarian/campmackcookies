@@ -56,8 +56,8 @@ export default function PromoPopup() {
         </button>
 
         {/* Image Section */}
-        <div className="w-full md:w-1/2 relative min-h-[250px] md:min-h-[450px] bg-[#FAE8C8] flex items-center justify-center p-4 md:p-8">
-          <div className="relative w-full h-full min-h-[200px] md:min-h-[350px]">
+        <div className="w-full md:w-1/2 relative min-h-[160px] sm:min-h-[200px] md:min-h-[450px] bg-[#FAE8C8] flex items-center justify-center p-4 md:p-8">
+          <div className="relative w-full h-full min-h-[140px] sm:min-h-[180px] md:min-h-[350px]">
             <Image 
               src="/coupon2.jpg" 
               alt="Camp Mack Cookie Co. 20% Off Coupon" 
@@ -69,11 +69,11 @@ export default function PromoPopup() {
         </div>
 
         {/* Content Section */}
-        <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center" style={{ backgroundColor: "var(--color-vanilla)" }}>
+        <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-12 flex flex-col justify-center" style={{ backgroundColor: "var(--color-vanilla)" }}>
           {hasSubmitted ? (
             <div className="text-center space-y-4 animate-in fade-in zoom-in duration-500">
-              <div className="text-6xl mb-4">🎉</div>
-              <h2 className="text-4xl font-extrabold mb-2" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>
+              <div className="text-5xl md:text-6xl mb-4">🎉</div>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-2" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>
                 You're in!
               </h2>
               <p className="text-xl" style={{ fontFamily: "var(--font-nunito)", color: "var(--color-chocolate)" }}>
@@ -82,15 +82,15 @@ export default function PromoPopup() {
             </div>
           ) : (
             <div className="animate-in fade-in duration-500">
-              <div className="flex justify-center mb-4 text-4xl">🍪</div>
+              <div className="flex justify-center mb-3 md:mb-4 text-3xl md:text-4xl">🍪</div>
               <h2 
-                className="text-3xl md:text-5xl font-extrabold mb-4 text-center leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 md:mb-4 text-center leading-tight"
                 style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}
               >
                 Sweet Deal!
               </h2>
               <p 
-                className="text-center text-lg md:text-xl mb-8"
+                className="text-center text-base sm:text-lg md:text-xl mb-6 md:mb-8"
                 style={{ fontFamily: "var(--font-nunito)", color: "var(--color-chocolate)", opacity: 0.9 }}
               >
                 Sign up for our newsletter and get <span className="font-bold whitespace-nowrap" style={{ color: "var(--color-caramel)" }}>20% OFF</span> your next order!
