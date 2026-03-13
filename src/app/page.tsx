@@ -1,9 +1,11 @@
 import Image from "next/image";
 import OrderForm from "@/components/OrderForm";
+import PromoPopup from "@/components/PromoPopup";
 
 export default function Home() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "var(--color-cream)" }}>
+      <PromoPopup />
       {/* Navbar */}
       <nav className="flex items-center justify-between px-6 py-5 md:px-12">
         <div className="flex items-center gap-3">
