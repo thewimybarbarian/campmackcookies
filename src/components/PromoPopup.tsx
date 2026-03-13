@@ -8,22 +8,15 @@ export default function PromoPopup() {
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
   useEffect(() => {
-    // Check if user has already seen the popup
-    const hasSeenPopup = localStorage.getItem("campMackPromoSeen");
-    
-    // For testing purposes, we might want it to show up frequently, but normally:
-    if (!hasSeenPopup) {
-      // Pop up after 3 seconds
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
+    // For testing purposes, always show after 3 seconds:
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 3000);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem("campMackPromoSeen", "true");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
