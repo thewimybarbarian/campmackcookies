@@ -16,6 +16,7 @@ export default function OrderForm() {
   const { quantities, updateQuantity, clearCart } = useCart();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleQuantityChange = (id: string, delta: number) => {
     updateQuantity(id, delta);
@@ -30,13 +31,46 @@ export default function OrderForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    clearCart();
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+
+    const items: Record<string, number> = {};
+    for (const [id, qty] of Object.entries(quantities)) {
+      if (qty > 0) items[id] = qty;
+    }
+
+    try {
+      const res = await fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.get("firstName"),
+          lastName: formData.get("lastName"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          receivingMethod: formData.get("receivingMethod"),
+          requestedDate: formData.get("requestedDate"),
+          items,
+          specialInstructions: formData.get("specialInstructions") || "",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setIsSuccess(true);
+      clearCart();
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Failed to place order. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSuccess) {
@@ -70,21 +104,21 @@ export default function OrderForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>First Name *</label>
-            <input required type="text" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none focus:ring-[#E69A4C]" style={{ borderColor: "var(--color-sand)" }} />
+            <input name="firstName" required type="text" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none focus:ring-[#E69A4C]" style={{ borderColor: "var(--color-sand)" }} />
           </div>
           <div>
             <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Last Name *</label>
-            <input required type="text" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
+            <input name="lastName" required type="text" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Email *</label>
-            <input required type="email" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
+            <input name="email" required type="email" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
           </div>
           <div>
             <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Phone Number *</label>
-            <input required type="tel" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
+            <input name="phone" required type="tel" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
           </div>
         </div>
       </div>
@@ -95,7 +129,7 @@ export default function OrderForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Receiving Method *</label>
-            <select required className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none bg-white" style={{ borderColor: "var(--color-sand)" }}>
+            <select name="receivingMethod" required className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none bg-white" style={{ borderColor: "var(--color-sand)" }}>
               <option value="">Select an option</option>
               <option value="pickup">Local Pickup</option>
               <option value="delivery">Delivery</option>
@@ -103,7 +137,7 @@ export default function OrderForm() {
           </div>
           <div>
             <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Requested Date *</label>
-            <input required type="date" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
+            <input name="requestedDate" required type="date" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
           </div>
         </div>
       </div>
@@ -116,7 +150,7 @@ export default function OrderForm() {
             ${totalPrice.toFixed(2)} Total
           </span>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {COOKIE_TYPES.map((cookie) => (
             <div key={cookie.id} className="flex items-center justify-between p-3 rounded-xl border bg-slate-50 border-slate-200">
@@ -151,13 +185,21 @@ export default function OrderForm() {
       {/* Special Instructions */}
       <div className="space-y-4 mb-8">
         <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Special Instructions</label>
-        <textarea 
-          rows={3} 
-          className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" 
+        <textarea
+          name="specialInstructions"
+          rows={3}
+          className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none"
           style={{ borderColor: "var(--color-sand)" }}
           placeholder="Allergies, specific packaging requests, etc..."
         />
       </div>
+
+      {/* Error Display */}
+      {error && (
+        <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm font-medium">
+          {error}
+        </div>
+      )}
 
       {/* Submit Button */}
       <button
