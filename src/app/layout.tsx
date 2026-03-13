@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Baloo_2, Nunito } from "next/font/google";
+import { Baloo_2, Nunito, Oleo_Script } from "next/font/google";
 import "./globals.css";
 
 const baloo = Baloo_2({
@@ -14,6 +14,12 @@ const nunito = Nunito({
   weight: ["400", "500", "600", "700"],
 });
 
+const oleo = Oleo_Script({
+  variable: "--font-oleo",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Camp Mack Cookies",
   description: "Handcrafted cookies baked with love.",
@@ -26,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${baloo.variable} ${nunito.variable} antialiased`}>
+      <body className={`${baloo.variable} ${nunito.variable} ${oleo.variable} antialiased`}>
         {children}
       </body>
     </html>

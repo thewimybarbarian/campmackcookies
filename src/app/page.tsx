@@ -144,74 +144,147 @@ export default function Home() {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 
-            className="text-4xl md:text-5xl font-extrabold mb-4"
-            style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}
-          >
-            March Menu
-          </h2>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
-            Hand-rolled, fresh-baked, and carefully crafted. Here's what's dropping this month!
-          </p>
+      <section id="menu" className="relative pb-24">
+        {/* Top Gradient Background */}
+        <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] z-0" />
+        
+        {/* Bottom Wood Texture Background */}
+        <div 
+          className="absolute top-[400px] left-0 w-full h-[calc(100%-400px)] z-0" 
+          style={{
+            backgroundColor: "#F3EAE0",
+            backgroundImage: "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
+            opacity: 0.8
+          }} 
+        />
+        
+        {/* Playful Pennant Bunting */}
+        <div className="relative z-10 w-full flex justify-center pt-8 overflow-hidden pointer-events-none">
+          <svg width="400" height="40" viewBox="0 0 400 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-70 drop-shadow-sm">
+            <path d="M0,0 Q200,40 400,0" stroke="#4A2912" strokeWidth="1" strokeDasharray="4 4" fill="none"/>
+            <polygon points="40,4 20,24 60,20" fill="#FFB6C1" />
+            <polygon points="100,12 80,32 120,28" fill="#A3C7FF" />
+            <polygon points="160,18 140,38 180,34" fill="#DFF9EC" />
+            <polygon points="220,18 200,38 240,34" fill="#FFB6C1" />
+            <polygon points="280,12 260,32 300,28" fill="#A3C7FF" />
+            <polygon points="340,4 320,24 360,20" fill="#DFF9EC" />
+          </svg>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Chocolate Chip */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border-2 border-transparent hover:border-[#FAE8C8] flex flex-col items-center text-center group">
-            <div className="text-6xl mb-6 transform transition-transform group-hover:scale-110 group-hover:rotate-6">🍪</div>
-            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Chocolate Chip</h3>
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
-              The classic you can't go wrong with. Thick, soft, and loaded with chocolate chips.
+        <div className="relative z-10 px-6 md:px-12 max-w-7xl mx-auto pt-4">
+          <div className="text-center mb-10 flex flex-col items-center">
+            <h2 
+              className="text-5xl md:text-7xl mb-2"
+              style={{ fontFamily: "var(--font-oleo)", color: "var(--color-chocolate)" }}
+            >
+              March Cookie Menu
+            </h2>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto font-semibold mb-8" style={{ fontFamily: "var(--font-nunito)", color: "var(--color-chocolate)" }}>
+              Our Freshly Baked March Flavors
             </p>
+            
+            {/* Bundle & Save Banner */}
+            <div 
+              className="inline-block bg-[var(--color-cream)] px-8 py-3 rounded-xl border border-[#D1BFA5] shadow-lg mb-4"
+              style={{
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), inset 0 2px 4px rgba(255,255,255,0.8)"
+              }}
+            >
+              <p className="font-extrabold text-xl md:text-2xl" style={{ fontFamily: "var(--font-nunito)", color: "var(--color-chocolate)" }}>
+                BUNDLE & SAVE: 6 for $18 or 12 for $33!
+              </p>
+              <p className="font-medium text-sm md:text-base mt-1" style={{ color: "var(--color-chocolate)" }}>
+                (Select your cookies at checkout)
+              </p>
+            </div>
+          </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {/* Chocolate Chip */}
+          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">🍪</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Classic Chocolate Chip</h3>
+            <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
+              Buttery dough with semi-sweet chocolate chips
+            </p>
+            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              Select
+            </button>
           </div>
 
           {/* Cookie Monster */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border-2 border-transparent hover:border-[#FAE8C8] flex flex-col items-center text-center group">
-            <div className="text-6xl mb-6 transform transition-transform group-hover:scale-110 group-hover:-rotate-6">💙</div>
-            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Cookie Monster</h3>
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
-              Bright blue vanilla base packed with oreos + white chocolate chips. Fun, gooey, and a fan favorite.
+          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">💙</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Blue Cookie Monster</h3>
+            <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
+              Vibrant blue dough with Oreo bits and white chocolate
             </p>
+            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              Select
+            </button>
           </div>
 
           {/* Cinnamon Roll */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border-2 border-transparent hover:border-[#FAE8C8] flex flex-col items-center text-center group">
-            <div className="text-6xl mb-6 transform transition-transform group-hover:scale-110 group-hover:rotate-6">🤎</div>
-            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Cinnamon Roll</h3>
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
-              Cinnamon sugar cookie topped with brown sugar streusel and finished with a sweet icing drizzle.
+          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">🤎</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Cinnamon Roll</h3>
+            <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
+              Swirls of brown sugar streusel and sweet icing glaze
             </p>
+            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              Select
+            </button>
           </div>
 
           {/* Red Velvet */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border-2 border-transparent hover:border-[#FAE8C8] flex flex-col items-center text-center group">
-            <div className="text-6xl mb-6 transform transition-transform group-hover:scale-110 group-hover:-rotate-6">❤️</div>
-            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Red Velvet</h3>
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
-              Rich red velvet base stuffed with creamy white chocolate chunks.
+          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">❤️</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Red Velvet</h3>
+            <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
+              Cocoa-infused red dough with melting white chocolate chunks
             </p>
+            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              Select
+            </button>
           </div>
 
           {/* Reese's */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border-2 border-transparent hover:border-[#FAE8C8] flex flex-col items-center text-center group">
-            <div className="text-6xl mb-6 transform transition-transform group-hover:scale-110 group-hover:rotate-6">🧡</div>
-            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Reese's</h3>
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
-              Peanut butter lovers, this one's for you. Loaded with reese's pieces in every bite.
+          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">🧡</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Peanut Butter & Reese's</h3>
+            <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
+              Classic peanut butter cup taste, studded with real Reese's Pieces
             </p>
+            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              Select
+            </button>
           </div>
 
           {/* Sprinkle */}
-          <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border-2 border-transparent hover:border-[#FAE8C8] flex flex-col items-center text-center group">
-            <div className="text-6xl mb-6 transform transition-transform group-hover:scale-110 group-hover:-rotate-6">🌈</div>
-            <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Sprinkle</h3>
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
-              Soft vanilla sugar cookie rolled in colorful sprinkles for the perfect nostalgic bite.
+          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+            <div className="w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
+               <span className="text-8xl md:text-9xl transform transition-transform group-hover:scale-105">🌈</span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Confetti Sprinkle</h3>
+            <p className="text-sm md:text-base text-center mb-6 flex-grow" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
+              Vanilla sugar cookie celebration with rainbow sprinkles
             </p>
+            <button className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              Select
+            </button>
           </div>
         </div>
+      </div>
         
         <div className="mt-16 text-center">
           <p className="text-xl font-bold mb-6" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-caramel)" }}>
