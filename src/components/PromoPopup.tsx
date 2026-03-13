@@ -29,7 +29,7 @@ export default function PromoPopup() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-6 py-8 bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 hidden md:flex items-center justify-center px-6 py-8 bg-black/50 backdrop-blur-sm">
       <div
         className="relative w-[calc(100%-2rem)] max-w-sm md:max-w-4xl max-h-[85vh] overflow-y-auto bg-white rounded-2xl md:rounded-3xl shadow-2xl flex flex-col md:flex-row mx-auto"
         style={{ border: "3px solid var(--color-chocolate)" }}
