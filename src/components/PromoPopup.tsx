@@ -40,7 +40,7 @@ export default function PromoPopup() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/50 backdrop-blur-sm transition-opacity">
       <div 
-        className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300"
+        className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in fade-in zoom-in duration-300"
         style={{ border: "4px solid var(--color-chocolate)" }}
       >
         {/* Close Button */}
@@ -56,18 +56,18 @@ export default function PromoPopup() {
         </button>
 
         {/* Image Section */}
-        <div className="w-full relative aspect-[2/1] bg-[#FAE8C8]">
+        <div className="w-full md:w-1/2 relative min-h-[250px] md:min-h-[450px] bg-[#FAE8C8]">
           <Image 
-            src="/coupon.jpg" 
+            src="/coupon2.jpg" 
             alt="Camp Mack Cookie Co. 20% Off Coupon" 
             fill
-            className="object-contain"
+            className="object-cover object-center"
             priority
           />
         </div>
 
         {/* Content Section */}
-        <div className="w-full p-8 md:p-10 flex flex-col justify-center" style={{ backgroundColor: "var(--color-vanilla)" }}>
+        <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center" style={{ backgroundColor: "var(--color-vanilla)" }}>
           {hasSubmitted ? (
             <div className="text-center space-y-4 animate-in fade-in zoom-in duration-500">
               <div className="text-6xl mb-4">🎉</div>
