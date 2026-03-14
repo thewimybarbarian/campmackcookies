@@ -1,0 +1,39 @@
+import { NextRequest, NextResponse } from "next/server";
+import { createSessionToken } from "@/lib/admin-auth";
+
+export async function POST(request: NextRequest) {
+  try {
+    const { password } = await request.json();
+
+    if (password !== process.env.ADMIN_PASSWORD) {
+      return NextResponse.json({ error: "Incorrect password." }, { status: 401 });
+    }
+
+    const token = createSessionToken();
+    const response = NextResponse.json({ success: true });
+
+    response.cookies.set("admin_session", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      path: "/",
+      maxAge: 86400,
+    });
+
+    return response;
+  } catch {
+    return NextResponse.json({ error: "Internal server error." }, { status: 500 });
+  }
+}
+
+export async function DELETE() {
+  const response = NextResponse.json({ success: true });
+  response.cookies.set("admin_session", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    path: "/",
+    maxAge: 0,
+  });
+  return response;
+}
