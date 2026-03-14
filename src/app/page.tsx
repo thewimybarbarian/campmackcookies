@@ -12,20 +12,31 @@ export default function Home() {
     addCookie(id);
     document.getElementById("order")?.scrollIntoView({ behavior: "smooth" });
   };
+  
   return (
-    <main className="min-h-screen" style={{ backgroundColor: "var(--color-cream)" }}>
-      <PromoPopup />
+    <main className="min-h-screen relative overflow-hidden" style={{ backgroundColor: "var(--color-cream)" }}>
+      {/* Warmer, more noticeable parchment/baking-paper texture */}
+      <div className="bg-texture-parchment absolute inset-0 pointer-events-none z-0 mix-blend-multiply opacity-80" />
+      
+      {/* Ambient background orbs for deep, soft lighting */}
+      <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full opacity-30 pointer-events-none z-0 mix-blend-multiply" style={{ background: "radial-gradient(circle, var(--color-vanilla) 0%, transparent 60%)", filter: "blur(80px)" }} />
+      <div className="absolute top-[40%] right-[-15%] w-[70%] h-[70%] rounded-full opacity-20 pointer-events-none z-0 mix-blend-multiply" style={{ background: "radial-gradient(circle, var(--color-sand) 0%, transparent 60%)", filter: "blur(100px)" }} />
+      <div className="absolute bottom-[-10%] left-[10%] w-[50%] h-[50%] rounded-full opacity-30 pointer-events-none z-0 mix-blend-multiply" style={{ background: "radial-gradient(circle, var(--color-vanilla) 0%, transparent 60%)", filter: "blur(90px)" }} />
+
+      <div className="relative z-10">
+        <PromoPopup />
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-6 py-5 md:px-12">
-        <div className="flex items-center gap-2">
+      <nav className="flex items-center justify-between px-4 py-5 md:px-12">
+        <div className="flex items-center gap-2 min-w-0">
           <Image
             src="/cookie-icon.png"
             alt="Cookie icon"
             width={36}
             height={36}
+            className="flex-shrink-0"
           />
           <span
-            className="text-2xl font-extrabold tracking-tight"
+            className="text-lg sm:text-2xl font-extrabold tracking-tight truncate"
             style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}
           >
             Camp Mack Cookies
@@ -40,7 +51,7 @@ export default function Home() {
           <a href="#order" className="hover:opacity-70 transition-opacity">Order</a>
           <a
             href="#order"
-            className="px-5 py-2 rounded-full font-bold transition-opacity hover:opacity-80"
+            className="px-5 py-2 rounded-full font-bold transition-all duration-300 hover:opacity-90 hover:shadow-elegant hover:-translate-y-0.5 active:scale-95"
             style={{ backgroundColor: "var(--color-caramel)", color: "#fff" }}
           >
             Order Now
@@ -53,12 +64,10 @@ export default function Home() {
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-8">
 
           {/* Centerpiece image */}
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center w-full max-w-[480px]">
             <div
-              className="absolute rounded-full"
+              className="absolute inset-0 rounded-full"
               style={{
-                width: "520px",
-                height: "520px",
                 background: "radial-gradient(circle, #FAE8C8 0%, transparent 70%)",
                 filter: "blur(32px)",
               }}
@@ -68,14 +77,14 @@ export default function Home() {
               alt="Camp Mack Cookie Co."
               width={480}
               height={480}
-              className="relative drop-shadow-2xl"
+              className="relative drop-shadow-2xl w-full h-auto"
               priority
             />
           </div>
 
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold"
+            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold tracking-wide uppercase shadow-sm"
             style={{
               backgroundColor: "var(--color-vanilla)",
               color: "var(--color-caramel)",
@@ -89,7 +98,7 @@ export default function Home() {
 
           {/* Headline */}
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-sm"
             style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}
           >
             Life&rsquo;s Better With a{" "}
@@ -107,10 +116,10 @@ export default function Home() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
             <a
               href="#order"
-              className="px-8 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 active:scale-95 shadow-md"
+              className="px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 shadow-elegant hover:shadow-elegant-hover hover:-translate-y-1 active:scale-95"
               style={{
                 fontFamily: "var(--font-baloo)",
                 backgroundColor: "var(--color-caramel)",
@@ -121,7 +130,7 @@ export default function Home() {
             </a>
             <a
               href="#menu"
-              className="px-8 py-4 rounded-full text-lg font-bold transition-all hover:opacity-80"
+              className="px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:bg-[#F3EAE0] active:scale-95"
               style={{
                 fontFamily: "var(--font-baloo)",
                 color: "var(--color-chocolate)",
@@ -134,8 +143,8 @@ export default function Home() {
           </div>
 
           {/* Header product shot */}
-          <div className="w-full max-w-4xl mt-4">
-            <div className="relative rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(74,41,18,0.15)]">
+          <div className="w-full max-w-4xl mt-8 transition-transform duration-700 hover:scale-[1.01]">
+            <div className="relative rounded-3xl overflow-hidden shadow-elegant">
               <Image
                 src="/header.png"
                 alt="Camp Mack Cookie Co. fresh-baked cookie collection"
@@ -222,7 +231,7 @@ export default function Home() {
         <div className="relative z-10 px-6 md:px-12 max-w-7xl mx-auto pt-4">
           <div className="text-center mb-10 flex flex-col items-center">
             <h2 
-              className="text-5xl md:text-7xl mb-2"
+              className="text-3xl sm:text-5xl md:text-7xl mb-2 tracking-tight drop-shadow-sm"
               style={{ fontFamily: "var(--font-oleo)", color: "var(--color-chocolate)" }}
             >
               March Cookie Menu
@@ -233,12 +242,9 @@ export default function Home() {
             
             {/* Bundle & Save Banner */}
             <div 
-              className="inline-block bg-[var(--color-cream)] px-8 py-3 rounded-xl border border-[#D1BFA5] shadow-lg mb-4"
-              style={{
-                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), inset 0 2px 4px rgba(255,255,255,0.8)"
-              }}
+              className="inline-block bg-[var(--color-cream)] px-8 py-3 rounded-xl border border-[#D1BFA5] shadow-elegant mb-4 transition-transform duration-300 hover:-translate-y-0.5"
             >
-              <p className="font-extrabold text-xl md:text-2xl" style={{ fontFamily: "var(--font-nunito)", color: "var(--color-chocolate)" }}>
+              <p className="font-extrabold text-base sm:text-xl md:text-2xl" style={{ fontFamily: "var(--font-nunito)", color: "var(--color-chocolate)" }}>
                 BUNDLE & SAVE: 6 for $18 or 12 for $33!
               </p>
               <p className="font-medium text-sm md:text-base mt-1" style={{ color: "var(--color-chocolate)" }}>
@@ -249,7 +255,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* Chocolate Chip */}
-          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c1.png" alt="Classic Chocolate Chip Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -265,7 +271,7 @@ export default function Home() {
           </div>
 
           {/* Cookie Monster */}
-          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c2.png" alt="Blue Cookie Monster Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -281,7 +287,7 @@ export default function Home() {
           </div>
 
           {/* Cinnamon Roll */}
-          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c4.png" alt="Cinnamon Roll Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -297,7 +303,7 @@ export default function Home() {
           </div>
 
           {/* Red Velvet */}
-          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c3.png" alt="Red Velvet Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -313,7 +319,7 @@ export default function Home() {
           </div>
 
           {/* Reese's */}
-          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c5.png" alt="Peanut Butter & Reese's Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -329,7 +335,7 @@ export default function Home() {
           </div>
 
           {/* Sprinkle */}
-          <div className="bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group flex-1">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c6.png" alt="Confetti Sprinkle Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -347,7 +353,7 @@ export default function Home() {
       </div>
         
         <div className="mt-16 text-center">
-          <p className="text-xl font-bold mb-6" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-caramel)" }}>
+          <p className="text-xl font-bold mb-6 tracking-wide" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-caramel)" }}>
             💌 PRE ORDERS OPEN
           </p>
         </div>
@@ -371,17 +377,12 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
           {/* Image */}
-          <div className="relative flex-shrink-0">
+          <div className="relative flex-shrink-0 w-full max-w-[280px] md:max-w-[360px]">
             <div
-              className="absolute rounded-full"
+              className="absolute inset-0 rounded-full"
               style={{
-                width: "320px",
-                height: "320px",
                 background: "radial-gradient(circle, #FAE8C8 0%, transparent 70%)",
                 filter: "blur(24px)",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
               }}
             />
             <Image
@@ -389,14 +390,14 @@ export default function Home() {
               alt="Camp Mack Cookie Co."
               width={360}
               height={360}
-              className="relative drop-shadow-xl"
+              className="relative drop-shadow-xl w-full h-auto"
             />
           </div>
 
           {/* Copy */}
           <div className="text-center md:text-left">
             <h2
-              className="text-4xl md:text-5xl font-extrabold mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-sm"
               style={{ fontFamily: "var(--font-oleo)", color: "var(--color-chocolate)" }}
             >
               The Story Behind the Cookies
@@ -449,12 +450,12 @@ export default function Home() {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
             <a
               href="https://www.instagram.com/camp_mack_cookies/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-all hover:scale-105"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-transform duration-300 hover:scale-105 active:scale-95"
               style={{ backgroundColor: "var(--color-caramel)", color: "#fff", fontFamily: "var(--font-nunito)" }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -466,7 +467,7 @@ export default function Home() {
               href="https://www.facebook.com/profile.php?id=61588434764211"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-all hover:scale-105"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-transform duration-300 hover:scale-105 active:scale-95"
               style={{ backgroundColor: "var(--color-caramel)", color: "#fff", fontFamily: "var(--font-nunito)" }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -488,13 +489,14 @@ export default function Home() {
 
           {/* Bottom */}
           <p
-            className="text-xs"
+            className="text-xs tracking-wide"
             style={{ fontFamily: "var(--font-nunito)", color: "var(--color-sand)", opacity: 0.5 }}
           >
             &copy; {new Date().getFullYear()} Camp Mack Cookie Co. Baked with love in Arkansas.
           </p>
         </div>
       </footer>
+      </div>
     </main>
   );
 }
