@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { Resend } from "resend";
-import { COOKIE_PRICES, COOKIE_NAMES } from "@/lib/cookies";
+import { COOKIE_PRICES, COOKIE_NAMES, calculateBundlePrice } from "@/lib/cookies";
 import type { OrderPayload } from "@/lib/types";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -64,12 +64,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Compute totals server-side
+    // Compute totals server-side with bundle pricing
     const totalItems = Object.values(items).reduce((sum, qty) => sum + qty, 0);
-    const totalPrice = Object.entries(items).reduce(
-      (sum, [id, qty]) => sum + qty * COOKIE_PRICES[id],
-      0
-    );
+    const totalPrice = calculateBundlePrice(totalItems);
 
     // Save to Supabase
     const { data: order, error: dbError } = await supabase

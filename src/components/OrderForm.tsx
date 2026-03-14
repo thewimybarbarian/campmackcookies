@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { calculateBundlePrice } from "@/lib/cookies";
 
 const COOKIE_TYPES = [
   { id: "chocolate-chip", name: "Chocolate Chip", price: 3 },
@@ -23,10 +24,9 @@ export default function OrderForm() {
   };
 
   const totalItems = Object.values(quantities).reduce((a, b) => a + b, 0);
-  const totalPrice = COOKIE_TYPES.reduce(
-    (total, cookie) => total + (quantities[cookie.id] || 0) * cookie.price,
-    0
-  );
+  const fullPrice = totalItems * 3;
+  const totalPrice = calculateBundlePrice(totalItems);
+  const savings = fullPrice - totalPrice;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -146,9 +146,16 @@ export default function OrderForm() {
       <div className="space-y-4 mb-8">
         <div className="flex justify-between items-end border-b pb-2">
           <h3 className="text-xl font-bold" style={{ color: "var(--color-chocolate)" }}>Choose Cookies</h3>
-          <span className="text-sm font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded-md">
-            ${totalPrice.toFixed(2)} Total
-          </span>
+          <div className="text-right">
+            <span className="text-sm font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded-md">
+              ${totalPrice.toFixed(2)} Total
+            </span>
+            {savings > 0 && (
+              <div className="text-xs font-bold mt-1" style={{ color: "var(--color-sage)" }}>
+                You save ${savings.toFixed(2)}!
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -180,6 +187,10 @@ export default function OrderForm() {
             </div>
           ))}
         </div>
+
+        <p className="text-xs font-semibold text-center mt-2" style={{ color: "#7A5230", opacity: 0.7 }}>
+          $3 each &bull; 6 for $18 &bull; 12 for $33
+        </p>
       </div>
 
       {/* Special Instructions */}
