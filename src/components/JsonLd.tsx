@@ -4,13 +4,13 @@ export default function JsonLd() {
     "@type": "Bakery",
     name: "Camp Mack Cookie Co.",
     description:
-      "Handcrafted cookies baked with love in Arizona. Chocolate Chip, Cookie Monster, Red Velvet & more.",
+      "Handcrafted cookies baked with love in Arkansas. Chocolate Chip, Cookie Monster, Red Velvet & more.",
     url: "https://campmackcookies.com",
     logo: "https://campmackcookies.com/logo-2.png",
     image: "https://campmackcookies.com/header.png",
     address: {
       "@type": "PostalAddress",
-      addressRegion: "AZ",
+      addressRegion: "AR",
       addressCountry: "US",
     },
     sameAs: [

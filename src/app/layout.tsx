@@ -25,22 +25,22 @@ const oleo = Oleo_Script({
 export const metadata: Metadata = {
   metadataBase: new URL("https://campmackcookies.com"),
   title: {
-    default: "Camp Mack Cookie Co. | Handcrafted Cookies in Arizona",
+    default: "Camp Mack Cookie Co. | Handcrafted Cookies in Arkansas",
     template: "%s | Camp Mack Cookie Co.",
   },
   description:
-    "Handcrafted cookies baked with love in Arizona. Chocolate Chip, Cookie Monster, Red Velvet & more. Order online — 6 for $18, 12 for $33. Local pickup & delivery available.",
+    "Handcrafted cookies baked with love in Arkansas. Chocolate Chip, Cookie Monster, Red Velvet & more. Order online — 6 for $18, 12 for $33. Local pickup & delivery available.",
   keywords: [
     "cookies",
     "handmade cookies",
-    "Arizona cookies",
+    "Arkansas cookies",
     "cookie delivery",
     "Camp Mack Cookies",
     "order cookies online",
     "chocolate chip cookies",
     "cookie monster cookies",
     "red velvet cookies",
-    "homemade cookies Arizona",
+    "homemade cookies Arkansas",
   ],
   authors: [{ name: "Camp Mack Cookie Co." }],
   creator: "Camp Mack Cookie Co.",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://campmackcookies.com",
     siteName: "Camp Mack Cookie Co.",
-    title: "Camp Mack Cookie Co. | Handcrafted Cookies in Arizona",
+    title: "Camp Mack Cookie Co. | Handcrafted Cookies in Arkansas",
     description:
-      "Handcrafted cookies baked with love in Arizona. Order online — 6 for $18, 12 for $33!",
+      "Handcrafted cookies baked with love in Arkansas. Order online — 6 for $18, 12 for $33!",
     images: [
       {
         url: "/header.png",
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Camp Mack Cookie Co. | Handcrafted Cookies in Arizona",
+    title: "Camp Mack Cookie Co. | Handcrafted Cookies in Arkansas",
     description:
-      "Handcrafted cookies baked with love in Arizona. Order online — 6 for $18, 12 for $33!",
+      "Handcrafted cookies baked with love in Arkansas. Order online — 6 for $18, 12 for $33!",
     images: ["/header.png"],
   },
   robots: {

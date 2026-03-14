@@ -405,7 +405,7 @@ export default function Home() {
               className="text-lg leading-relaxed mb-4"
               style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}
             >
-              Camp Mack Cookie Co. was born in a small Arizona kitchen with a big dream. What
+              Camp Mack Cookie Co. was born in a small Arkansas kitchen with a big dream. What
               started as a passion for baking became something bigger — a way to bring people
               together, one cookie at a time.
             </p>
@@ -491,7 +491,7 @@ export default function Home() {
             className="text-xs"
             style={{ fontFamily: "var(--font-nunito)", color: "var(--color-sand)", opacity: 0.5 }}
           >
-            &copy; {new Date().getFullYear()} Camp Mack Cookie Co. Baked with love in Arizona.
+            &copy; {new Date().getFullYear()} Camp Mack Cookie Co. Baked with love in Arkansas.
           </p>
         </div>
       </footer>

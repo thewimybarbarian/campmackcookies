@@ -174,7 +174,7 @@ function buildOrderEmailHtml(data: {
     <div style="background-color: #FFFFFF; padding: 24px; border: 1px solid #E8D5B0;">
       <p style="color: #7A5230; font-size: 13px; margin: 0 0 16px;">
         Order ID: <strong>${data.orderId}</strong><br>
-        Placed: ${new Date(data.createdAt).toLocaleString("en-US", { timeZone: "America/Phoenix" })}
+        Placed: ${new Date(data.createdAt).toLocaleString("en-US", { timeZone: "America/Chicago" })}
       </p>
       <h2 style="color: #4A2912; font-size: 18px; margin: 0 0 8px; border-bottom: 2px solid #E8D5B0; padding-bottom: 4px;">Customer</h2>
       <table style="width: 100%; font-size: 14px; color: #4A2912; margin-bottom: 16px;">
@@ -209,7 +209,7 @@ function buildOrderEmailHtml(data: {
       }
     </div>
     <div style="background-color: #4A2912; border-radius: 0 0 16px 16px; padding: 16px; text-align: center;">
-      <p style="color: #E8D5B0; margin: 0; font-size: 12px;">Camp Mack Cookie Co. &mdash; Baked with love in Arizona</p>
+      <p style="color: #E8D5B0; margin: 0; font-size: 12px;">Camp Mack Cookie Co. &mdash; Baked with love in Arkansas</p>
     </div>
   </div>
 </body>

@@ -66,7 +66,7 @@ export async function GET(request: NextRequest) {
 
   const rows = (orders || []).map((o) => [
     o.id,
-    new Date(o.created_at).toLocaleString("en-US", { timeZone: "America/Phoenix" }),
+    new Date(o.created_at).toLocaleString("en-US", { timeZone: "America/Chicago" }),
     o.first_name,
     o.last_name,
     o.email,
