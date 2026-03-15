@@ -75,15 +75,15 @@ export default function OrderForm() {
 
   if (isSuccess) {
     return (
-      <div className="bg-white p-8 rounded-2xl shadow-xl text-center max-w-md mx-auto border-2 border-[var(--color-sand)]">
+      <div className="bg-white p-8 rounded-2xl shadow-elegant text-center max-w-md mx-auto border-2 border-[var(--color-sand)]">
         <div className="text-6xl mb-4">🍪</div>
-        <h3 className="text-3xl font-extrabold mb-2" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Order Received!</h3>
-        <p className="text-lg mb-6" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
+        <h3 className="text-3xl font-extrabold mb-2 tracking-tight drop-shadow-sm" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>Order Received!</h3>
+        <p className="text-lg mb-6 leading-relaxed" style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}>
           Thank you for your order! We will reach out shortly to confirm the details.
         </p>
         <button
           onClick={() => setIsSuccess(false)}
-          className="px-6 py-2 rounded-full font-bold transition-all hover:opacity-80"
+          className="px-6 py-2 rounded-full font-bold transition-all duration-300 hover:opacity-90 hover:shadow-elegant hover:-translate-y-0.5 active:scale-95"
           style={{ backgroundColor: "var(--color-caramel)", color: "#fff" }}
         >
           Place Another Order
@@ -93,58 +93,58 @@ export default function OrderForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-2xl shadow-xl max-w-2xl mx-auto border-2 border-[var(--color-sand)] text-left">
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>
+    <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-2xl shadow-elegant max-w-2xl mx-auto border-2 border-[var(--color-sand)] text-left">
+      <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center tracking-tight drop-shadow-sm" style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}>
         Place Your Order
       </h2>
 
       {/* Customer Info */}
       <div className="space-y-4 mb-8">
-        <h3 className="text-xl font-bold border-b pb-2" style={{ color: "var(--color-chocolate)" }}>Your Details</h3>
+        <h3 className="text-xl font-bold border-b pb-2 tracking-wide" style={{ color: "var(--color-chocolate)" }}>Your Details</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>First Name *</label>
-            <input name="firstName" required type="text" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none focus:ring-[#E69A4C]" style={{ borderColor: "var(--color-sand)" }} />
+          <div className="group">
+            <label className="block text-sm font-semibold mb-1 transition-colors group-focus-within:text-[#C8761A]" style={{ color: "#7A5230" }}>First Name *</label>
+            <input name="firstName" required type="text" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-offset-1 focus:outline-none focus:ring-[var(--color-caramel)] focus:border-[var(--color-caramel)] transition-shadow" style={{ borderColor: "var(--color-sand)" }} />
           </div>
-          <div>
-            <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Last Name *</label>
-            <input name="lastName" required type="text" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
+          <div className="group">
+            <label className="block text-sm font-semibold mb-1 transition-colors group-focus-within:text-[#C8761A]" style={{ color: "#7A5230" }}>Last Name *</label>
+            <input name="lastName" required type="text" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-offset-1 focus:outline-none focus:ring-[var(--color-caramel)] focus:border-[var(--color-caramel)] transition-shadow" style={{ borderColor: "var(--color-sand)" }} />
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Email *</label>
-            <input name="email" required type="email" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
+          <div className="group">
+            <label className="block text-sm font-semibold mb-1 transition-colors group-focus-within:text-[#C8761A]" style={{ color: "#7A5230" }}>Email *</label>
+            <input name="email" required type="email" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-offset-1 focus:outline-none focus:ring-[var(--color-caramel)] focus:border-[var(--color-caramel)] transition-shadow" style={{ borderColor: "var(--color-sand)" }} />
           </div>
-          <div>
-            <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Phone Number *</label>
-            <input name="phone" required type="tel" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
+          <div className="group">
+            <label className="block text-sm font-semibold mb-1 transition-colors group-focus-within:text-[#C8761A]" style={{ color: "#7A5230" }}>Phone Number *</label>
+            <input name="phone" required type="tel" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-offset-1 focus:outline-none focus:ring-[var(--color-caramel)] focus:border-[var(--color-caramel)] transition-shadow" style={{ borderColor: "var(--color-sand)" }} />
           </div>
         </div>
       </div>
 
       {/* Delivery Info */}
       <div className="space-y-4 mb-8">
-        <h3 className="text-xl font-bold border-b pb-2" style={{ color: "var(--color-chocolate)" }}>Delivery Details</h3>
+        <h3 className="text-xl font-bold border-b pb-2 tracking-wide" style={{ color: "var(--color-chocolate)" }}>Delivery Details</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Receiving Method *</label>
-            <select name="receivingMethod" required className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none bg-white" style={{ borderColor: "var(--color-sand)" }}>
+          <div className="group">
+            <label className="block text-sm font-semibold mb-1 transition-colors group-focus-within:text-[#C8761A]" style={{ color: "#7A5230" }}>Receiving Method *</label>
+            <select name="receivingMethod" required className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-offset-1 focus:outline-none focus:ring-[var(--color-caramel)] focus:border-[var(--color-caramel)] transition-shadow bg-white" style={{ borderColor: "var(--color-sand)" }}>
               <option value="">Select an option</option>
               <option value="pickup">Local Pickup</option>
               <option value="delivery">Delivery</option>
             </select>
           </div>
-          <div>
-            <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Requested Date *</label>
-            <input name="requestedDate" required type="date" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none" style={{ borderColor: "var(--color-sand)" }} />
+          <div className="group">
+            <label className="block text-sm font-semibold mb-1 transition-colors group-focus-within:text-[#C8761A]" style={{ color: "#7A5230" }}>Requested Date *</label>
+            <input name="requestedDate" required type="date" className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-offset-1 focus:outline-none focus:ring-[var(--color-caramel)] focus:border-[var(--color-caramel)] transition-shadow" style={{ borderColor: "var(--color-sand)" }} />
           </div>
         </div>
       </div>
 
       {/* Cookies */}
       <div className="space-y-4 mb-8">
-        <div className="flex justify-between items-end border-b pb-2">
+        <div className="flex justify-between items-end border-b pb-2 tracking-wide">
           <h3 className="text-xl font-bold" style={{ color: "var(--color-chocolate)" }}>Choose Cookies</h3>
           <div className="text-right">
             <span className="text-sm font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded-md">
@@ -194,12 +194,12 @@ export default function OrderForm() {
       </div>
 
       {/* Special Instructions */}
-      <div className="space-y-4 mb-8">
-        <label className="block text-sm font-semibold mb-1" style={{ color: "#7A5230" }}>Special Instructions</label>
+      <div className="space-y-4 mb-8 group">
+        <label className="block text-sm font-semibold mb-1 transition-colors group-focus-within:text-[#C8761A]" style={{ color: "#7A5230" }}>Special Instructions</label>
         <textarea
           name="specialInstructions"
           rows={3}
-          className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:outline-none"
+          className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-offset-1 focus:outline-none focus:ring-[var(--color-caramel)] focus:border-[var(--color-caramel)] transition-shadow"
           style={{ borderColor: "var(--color-sand)" }}
           placeholder="Allergies, specific packaging requests, etc..."
         />
@@ -216,7 +216,7 @@ export default function OrderForm() {
       <button
         type="submit"
         disabled={isSubmitting || totalItems === 0}
-        className="w-full py-4 rounded-xl text-xl font-bold transition-all shadow-md flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 hover:scale-[1.02]"
+        className="w-full py-4 rounded-xl text-xl font-bold transition-all duration-300 shadow-elegant flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:-translate-y-0 disabled:hover:shadow-elegant enabled:hover:shadow-elegant-hover enabled:hover:-translate-y-1 enabled:active:scale-95"
         style={{
           fontFamily: "var(--font-baloo)",
           backgroundColor: totalItems > 0 ? "var(--color-caramel)" : "var(--color-sand)",
