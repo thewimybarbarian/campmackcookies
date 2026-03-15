@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="relative pb-24 -mt-px">
+      <section id="menu" className="relative pb-24">
         {/* Full Menu Background (Wood) */}
         <div 
           className="absolute top-0 left-0 w-full h-full z-[0]" 
@@ -185,12 +185,12 @@ export default function Home() {
           }}
         />
 
-        {/* Wavy top divider from Hero */}
-        <div className="absolute -top-px left-0 w-full overflow-hidden leading-none z-[2]" style={{ transform: "rotate(180deg)" }}>
+        {/* Wavy top divider from Hero — pulled up to overlap and prevent gap */}
+        <div className="absolute left-0 w-full overflow-hidden leading-none z-[2]" style={{ transform: "rotate(180deg)", top: "-1px" }}>
           <svg
             viewBox="0 0 1440 80"
             preserveAspectRatio="none"
-            className="w-full h-12 md:h-20"
+            className="w-full h-14 md:h-24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -201,11 +201,11 @@ export default function Home() {
         </div>
 
         {/* Wavy bottom divider leading to Order Section */}
-        <div className="absolute -bottom-px left-0 w-full overflow-hidden leading-none z-[2]">
+        <div className="absolute left-0 w-full overflow-hidden leading-none z-[2]" style={{ bottom: "-1px" }}>
           <svg
             viewBox="0 0 1440 80"
             preserveAspectRatio="none"
-            className="w-full h-12 md:h-20"
+            className="w-full h-14 md:h-24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -369,8 +369,8 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="relative py-24 px-6 md:px-12" style={{ backgroundColor: "var(--color-cream)" }}>
         {/* Wavy top divider */}
-        <div className="absolute -top-px left-0 w-full overflow-hidden leading-none" style={{ transform: "rotate(180deg)" }}>
-          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full h-12 md:h-20" xmlns="http://www.w3.org/2000/svg">
+        <div className="absolute left-0 w-full overflow-hidden leading-none" style={{ transform: "rotate(180deg)", top: "-1px" }}>
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full h-14 md:h-24" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="var(--color-vanilla)" />
           </svg>
         </div>

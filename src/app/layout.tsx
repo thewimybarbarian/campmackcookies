@@ -80,8 +80,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/cookie-icon.png",
-    apple: "/cookie-icon.png",
+    icon: "/favi-new.png",
+    apple: "/favi-new.png",
   },
 };
 
