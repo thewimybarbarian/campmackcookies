@@ -106,6 +106,47 @@ html, body {
 .stagger-5 { animation-delay: 0.5s; }
 .stagger-6 { animation-delay: 0.6s; }
 
+/* ── Cookie Preloader ── */
+
+@keyframes cookie-spin {
+  0% { transform: scale(0.8) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(10deg); }
+  50% { transform: scale(0.95) rotate(-5deg); }
+  75% { transform: scale(1.05) rotate(8deg); }
+  100% { transform: scale(0.8) rotate(0deg); }
+}
+
+@keyframes crumb-1 {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-12px) scale(0.6); opacity: 0.3; }
+}
+
+@keyframes crumb-2 {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-16px) scale(0.5); opacity: 0.2; }
+}
+
+@keyframes crumb-3 {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-10px) scale(0.7); opacity: 0.3; }
+}
+
+.animate-cookie-spin {
+  animation: cookie-spin 1.4s ease-in-out infinite;
+}
+
+.animate-crumb-1 {
+  animation: crumb-1 1.4s ease-in-out infinite;
+}
+
+.animate-crumb-2 {
+  animation: crumb-2 1.4s ease-in-out infinite 0.2s;
+}
+
+.animate-crumb-3 {
+  animation: crumb-3 1.4s ease-in-out infinite 0.4s;
+}
+
 /* Prefers reduced motion — disable all animations */
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
@@ -113,7 +154,11 @@ html, body {
   .animate-fade-up,
   .animate-sway,
   .animate-shimmer,
-  .animate-soft-bounce {
+  .animate-soft-bounce,
+  .animate-cookie-spin,
+  .animate-crumb-1,
+  .animate-crumb-2,
+  .animate-crumb-3 {
     animation: none !important;
   }
 }
