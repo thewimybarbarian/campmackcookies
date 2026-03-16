@@ -60,7 +60,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative px-6 pt-8 pb-32 md:pt-12 md:pb-48 md:px-12 overflow-hidden">
+      <section className="relative px-6 pt-8 pb-32 md:pt-12 md:pb-48 md:px-12">
         {/* Background video */}
         <video
           autoPlay
@@ -173,6 +173,20 @@ export default function Home() {
 
         </div>
 
+        {/* Wavy bottom divider — extends into menu section to prevent seam */}
+        <div className="absolute left-0 w-full overflow-hidden leading-none z-20" style={{ bottom: "-2px" }}>
+          <svg
+            viewBox="0 0 1440 80"
+            preserveAspectRatio="none"
+            className="w-full h-16 md:h-28"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
+              fill="var(--color-cream)"
+            />
+          </svg>
+        </div>
       </section>
 
       {/* Menu Section */}
@@ -196,20 +210,7 @@ export default function Home() {
           }}
         />
 
-        {/* Wavy top divider from Hero — pulled up to overlap and prevent gap */}
-        <div className="absolute left-0 w-full overflow-hidden leading-none z-[2]" style={{ transform: "rotate(180deg)", top: "-2px" }}>
-          <svg
-            viewBox="0 0 1440 80"
-            preserveAspectRatio="none"
-            className="w-full h-16 md:h-28"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
-              fill="var(--color-cream)"
-            />
-          </svg>
-        </div>
+
 
         {/* Wavy bottom divider leading to Order Section */}
         <div className="absolute left-0 w-full overflow-hidden leading-none z-[2]" style={{ bottom: "-1px" }}>
