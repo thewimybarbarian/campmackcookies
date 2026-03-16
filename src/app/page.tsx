@@ -173,23 +173,23 @@ export default function Home() {
 
         </div>
 
-      </section>
+        {/* ── Layered Wave Transition ── sits inside hero, extends below ── */}
+        <div className="absolute left-0 w-full z-20" style={{ bottom: "0", height: "150px", transform: "translateY(50%)" }}>
+          {/* Layer 1 – Cream (hero color) – curves down from hero */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 L1440,0 L1440,70 C1320,110 1080,40 840,80 C600,120 360,50 120,90 C60,100 0,95 0,95 Z" fill="var(--color-cream)" />
+          </svg>
+          {/* Layer 2 – Soft green (blends into menu gradient) */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,50 C180,20 360,100 540,65 C720,30 900,110 1080,75 C1260,40 1380,85 1440,70 L1440,200 L0,200 Z" fill="#DFF9EC" opacity="0.7" />
+          </svg>
+          {/* Layer 3 – Soft blue (accent wave) */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,100 C200,65 400,130 600,90 C800,50 1000,120 1200,80 C1350,60 1440,95 1440,95 L1440,200 L0,200 Z" fill="#A3C7FF" opacity="0.35" />
+          </svg>
+        </div>
 
-      {/* ── Layered Wave Transition ── Hero → Menu ── */}
-      <div className="relative w-full" style={{ marginTop: "-120px", marginBottom: "-120px", height: "240px", zIndex: 15 }}>
-        {/* Layer 1 – Cream base (hero color) – tallest wave */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,0 L1440,0 L1440,60 C1320,100 1080,30 840,70 C600,110 360,40 120,80 C60,90 0,85 0,85 Z" fill="var(--color-cream)" />
-        </svg>
-        {/* Layer 2 – Soft green (matches menu gradient start) */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,50 C180,20 360,90 540,60 C720,30 900,100 1080,70 C1260,40 1380,80 1440,65 L1440,160 L0,160 Z" fill="#DFF9EC" opacity="0.7" />
-        </svg>
-        {/* Layer 3 – Soft blue (matches menu gradient end) */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,90 C200,60 400,120 600,80 C800,40 1000,110 1200,75 C1350,55 1440,85 1440,85 L1440,160 L0,160 Z" fill="#A3C7FF" opacity="0.35" />
-        </svg>
-      </div>
+      </section>
 
       {/* Menu Section */}
       <section id="menu" className="relative pb-24" style={{ backgroundColor: "#DFF9EC" }}>
