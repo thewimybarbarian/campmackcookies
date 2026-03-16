@@ -60,8 +60,18 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative px-6 pt-8 pb-32 md:pt-12 md:pb-48 md:px-12">
-        <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-8">
+      <section className="relative px-6 pt-8 pb-32 md:pt-12 md:pb-48 md:px-12 overflow-hidden">
+        {/* Background video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none z-0"
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center gap-8">
 
           {/* Centerpiece image */}
           <div className="relative flex items-center justify-center w-full max-w-[480px] animate-float">
