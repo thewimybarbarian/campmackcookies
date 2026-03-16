@@ -33,7 +33,7 @@ export default function Home() {
             alt="Cookie icon"
             width={36}
             height={36}
-            className="flex-shrink-0"
+            className="flex-shrink-0 animate-soft-bounce"
           />
           <span
             className="text-lg sm:text-2xl font-extrabold tracking-tight truncate"
@@ -64,9 +64,9 @@ export default function Home() {
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-8">
 
           {/* Centerpiece image */}
-          <div className="relative flex items-center justify-center w-full max-w-[480px]">
+          <div className="relative flex items-center justify-center w-full max-w-[480px] animate-float">
             <div
-              className="absolute inset-0 rounded-full"
+              className="absolute inset-0 rounded-full animate-glow-pulse"
               style={{
                 background: "radial-gradient(circle, #FAE8C8 0%, transparent 70%)",
                 filter: "blur(32px)",
@@ -84,7 +84,7 @@ export default function Home() {
 
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold tracking-wide uppercase shadow-sm"
+            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold tracking-wide uppercase shadow-sm animate-fade-up stagger-1"
             style={{
               backgroundColor: "var(--color-vanilla)",
               color: "var(--color-caramel)",
@@ -98,7 +98,7 @@ export default function Home() {
 
           {/* Headline */}
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-sm"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-sm animate-fade-up stagger-2"
             style={{ fontFamily: "var(--font-baloo)", color: "var(--color-chocolate)" }}
           >
             Life&rsquo;s Better With a{" "}
@@ -108,7 +108,7 @@ export default function Home() {
 
           {/* Subtext */}
           <p
-            className="text-lg md:text-xl leading-relaxed max-w-xl"
+            className="text-lg md:text-xl leading-relaxed max-w-xl animate-fade-up stagger-3"
             style={{ fontFamily: "var(--font-nunito)", color: "#7A5230" }}
           >
             Handcrafted cookies made from scratch — cozy flavors, generous portions,
@@ -116,13 +116,14 @@ export default function Home() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 animate-fade-up stagger-4">
             <a
               href="#order"
-              className="px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 shadow-elegant hover:shadow-elegant-hover hover:-translate-y-1 active:scale-95"
+              className="px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 shadow-elegant hover:shadow-elegant-hover hover:-translate-y-1 active:scale-95 animate-shimmer"
               style={{
                 fontFamily: "var(--font-baloo)",
-                backgroundColor: "var(--color-caramel)",
+                backgroundImage: "linear-gradient(90deg, var(--color-caramel) 0%, #E8952E 25%, var(--color-caramel) 50%, #E8952E 75%, var(--color-caramel) 100%)",
+                backgroundSize: "200% auto",
                 color: "#fff",
               }}
             >
@@ -143,7 +144,7 @@ export default function Home() {
           </div>
 
           {/* Header product shot */}
-          <div className="w-full max-w-4xl mt-8 transition-transform duration-700 hover:scale-[1.01]">
+          <div className="w-full max-w-4xl mt-8 transition-transform duration-700 hover:scale-[1.01] animate-fade-up stagger-5">
             <div className="relative rounded-3xl overflow-hidden shadow-elegant">
               <Image
                 src="/header.png"
@@ -165,7 +166,7 @@ export default function Home() {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="relative pb-24">
+      <section id="menu" className="relative pb-24" style={{ backgroundColor: "#DFF9EC" }}>
         {/* Full Menu Background (Wood) */}
         <div 
           className="absolute top-0 left-0 w-full h-full z-[0]" 
@@ -186,11 +187,11 @@ export default function Home() {
         />
 
         {/* Wavy top divider from Hero — pulled up to overlap and prevent gap */}
-        <div className="absolute left-0 w-full overflow-hidden leading-none z-[2]" style={{ transform: "rotate(180deg)", top: "-1px" }}>
+        <div className="absolute left-0 w-full overflow-hidden leading-none z-[2]" style={{ transform: "rotate(180deg)", top: "-2px" }}>
           <svg
             viewBox="0 0 1440 80"
             preserveAspectRatio="none"
-            className="w-full h-14 md:h-24"
+            className="w-full h-16 md:h-28"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -217,7 +218,7 @@ export default function Home() {
         
         {/* Playful Pennant Bunting */}
         <div className="relative z-10 w-full flex justify-center pt-16 md:pt-20 overflow-hidden pointer-events-none">
-          <svg width="400" height="40" viewBox="0 0 400 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-70 drop-shadow-sm">
+          <svg width="400" height="40" viewBox="0 0 400 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-70 drop-shadow-sm animate-sway">
             <path d="M0,0 Q200,40 400,0" stroke="#4A2912" strokeWidth="1" strokeDasharray="4 4" fill="none"/>
             <polygon points="40,4 20,24 60,20" fill="#FFB6C1" />
             <polygon points="100,12 80,32 120,28" fill="#A3C7FF" />
@@ -255,7 +256,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* Chocolate Chip */}
-          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2 animate-fade-up stagger-1">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c1.png" alt="Classic Chocolate Chip Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -271,7 +272,7 @@ export default function Home() {
           </div>
 
           {/* Cookie Monster */}
-          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2 animate-fade-up stagger-2">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c2.png" alt="Blue Cookie Monster Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -287,7 +288,7 @@ export default function Home() {
           </div>
 
           {/* Cinnamon Roll */}
-          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2 animate-fade-up stagger-3">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c4.png" alt="Cinnamon Roll Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -303,7 +304,7 @@ export default function Home() {
           </div>
 
           {/* Red Velvet */}
-          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2 animate-fade-up stagger-4">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c3.png" alt="Red Velvet Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -319,7 +320,7 @@ export default function Home() {
           </div>
 
           {/* Reese's */}
-          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2 animate-fade-up stagger-5">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c5.png" alt="Peanut Butter & Reese's Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -335,7 +336,7 @@ export default function Home() {
           </div>
 
           {/* Sprinkle */}
-          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2">
+          <div className="bg-white rounded-3xl p-6 shadow-elegant transition-all duration-500 flex flex-col items-center group flex-1 hover:shadow-elegant-hover hover:-translate-y-2 animate-fade-up stagger-6">
             <div className="relative w-full aspect-square rounded-2xl bg-[#F8F5F2] flex items-center justify-center mb-6 overflow-hidden">
                <Image src="/c6.png" alt="Confetti Sprinkle Cookie" fill className="object-cover transform transition-transform group-hover:scale-105" />
             </div>
@@ -390,7 +391,7 @@ export default function Home() {
               alt="Camp Mack Cookie Co."
               width={360}
               height={360}
-              className="relative drop-shadow-xl w-full h-auto"
+              className="relative drop-shadow-xl w-full h-auto animate-soft-bounce"
             />
           </div>
 
