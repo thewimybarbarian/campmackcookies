@@ -60,7 +60,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative px-6 pt-8 pb-32 md:pt-12 md:pb-48 md:px-12">
+      <section className="relative px-6 pt-8 pb-16 md:pt-12 md:pb-24 md:px-12">
         {/* Background video */}
         <video
           autoPlay
@@ -176,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* ── Layered Wave Transition ── Hero → Menu ── */}
-      <div className="relative w-full" style={{ marginTop: "-80px", marginBottom: "-80px", height: "160px", zIndex: 15 }}>
+      <div className="relative w-full" style={{ marginTop: "-120px", marginBottom: "-120px", height: "240px", zIndex: 15 }}>
         {/* Layer 1 – Cream base (hero color) – tallest wave */}
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,0 L1440,0 L1440,60 C1320,100 1080,30 840,70 C600,110 360,40 120,80 C60,90 0,85 0,85 Z" fill="var(--color-cream)" />
