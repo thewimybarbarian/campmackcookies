@@ -46,12 +46,12 @@ export default function Home() {
           className="hidden md:flex items-center gap-8 text-base font-semibold"
           style={{ fontFamily: "var(--font-nunito)", color: "var(--color-chocolate)" }}
         >
-          <a href="#menu" className="hover:opacity-70 transition-opacity">Menu</a>
-          <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
-          <a href="#order" className="hover:opacity-70 transition-opacity">Order</a>
+          <a href="#menu" className="hover-underline transition-opacity">Menu</a>
+          <a href="#about" className="hover-underline transition-opacity">About</a>
+          <a href="#order" className="hover-underline transition-opacity">Order</a>
           <a
             href="#order"
-            className="px-5 py-2 rounded-full font-bold transition-all duration-300 hover:opacity-90 hover:shadow-elegant hover:-translate-y-0.5 active:scale-95"
+            className="btn-glow px-5 py-2 rounded-full font-bold transition-all duration-300 hover:shadow-elegant hover:-translate-y-0.5 hover:brightness-110 active:scale-95"
             style={{ backgroundColor: "var(--color-caramel)", color: "#fff" }}
           >
             Order Now
@@ -141,7 +141,7 @@ export default function Home() {
             </a>
             <a
               href="#menu"
-              className="px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:bg-[#F3EAE0] active:scale-95"
+              className="px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:bg-[#F3EAE0] hover:shadow-elegant hover:-translate-y-0.5 active:scale-95"
               style={{
                 fontFamily: "var(--font-baloo)",
                 color: "var(--color-chocolate)",
@@ -276,7 +276,7 @@ export default function Home() {
             </p>
             <button 
               onClick={() => handleSelectCookie("chocolate-chip")}
-              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              className="btn-select w-full py-3 rounded-xl font-bold shadow-md bg-gradient-to-r from-[#DFF9EC] via-[#A3C7FF] to-[#DFF9EC] hover:scale-[1.03] active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -292,7 +292,7 @@ export default function Home() {
             </p>
             <button 
               onClick={() => handleSelectCookie("cookie-monster")}
-              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              className="btn-select w-full py-3 rounded-xl font-bold shadow-md bg-gradient-to-r from-[#DFF9EC] via-[#A3C7FF] to-[#DFF9EC] hover:scale-[1.03] active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -308,7 +308,7 @@ export default function Home() {
             </p>
             <button 
               onClick={() => handleSelectCookie("cinnamon-roll")}
-              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              className="btn-select w-full py-3 rounded-xl font-bold shadow-md bg-gradient-to-r from-[#DFF9EC] via-[#A3C7FF] to-[#DFF9EC] hover:scale-[1.03] active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -324,7 +324,7 @@ export default function Home() {
             </p>
             <button 
               onClick={() => handleSelectCookie("red-velvet")}
-              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              className="btn-select w-full py-3 rounded-xl font-bold shadow-md bg-gradient-to-r from-[#DFF9EC] via-[#A3C7FF] to-[#DFF9EC] hover:scale-[1.03] active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -340,7 +340,7 @@ export default function Home() {
             </p>
             <button 
               onClick={() => handleSelectCookie("reeses")}
-              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              className="btn-select w-full py-3 rounded-xl font-bold shadow-md bg-gradient-to-r from-[#DFF9EC] via-[#A3C7FF] to-[#DFF9EC] hover:scale-[1.03] active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -356,7 +356,7 @@ export default function Home() {
             </p>
             <button 
               onClick={() => handleSelectCookie("sprinkle")}
-              className="w-full py-3 rounded-xl font-bold transition-all shadow-md bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] hover:opacity-90 active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
+              className="btn-select w-full py-3 rounded-xl font-bold shadow-md bg-gradient-to-r from-[#DFF9EC] via-[#A3C7FF] to-[#DFF9EC] hover:scale-[1.03] active:scale-95" style={{ color: "var(--color-chocolate)", fontFamily: "var(--font-nunito)" }}>
               Select
             </button>
           </div>
@@ -466,7 +466,7 @@ export default function Home() {
               href="https://www.instagram.com/camp_mack_cookies/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-transform duration-300 hover:scale-105 active:scale-95"
+              className="btn-social flex items-center gap-2 px-5 py-2.5 rounded-full font-bold hover:scale-105 active:scale-95"
               style={{ backgroundColor: "var(--color-caramel)", color: "#fff", fontFamily: "var(--font-nunito)" }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -478,7 +478,7 @@ export default function Home() {
               href="https://www.facebook.com/profile.php?id=61588434764211"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold transition-transform duration-300 hover:scale-105 active:scale-95"
+              className="btn-social flex items-center gap-2 px-5 py-2.5 rounded-full font-bold hover:scale-105 active:scale-95"
               style={{ backgroundColor: "var(--color-caramel)", color: "#fff", fontFamily: "var(--font-nunito)" }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -493,9 +493,9 @@ export default function Home() {
             className="flex items-center gap-6 text-sm font-semibold"
             style={{ fontFamily: "var(--font-nunito)", color: "var(--color-sand)" }}
           >
-            <a href="#menu" className="hover:opacity-70 transition-opacity">Menu</a>
-            <a href="#order" className="hover:opacity-70 transition-opacity">Order</a>
-            <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
+            <a href="#menu" className="hover-underline hover-underline-light transition-opacity">Menu</a>
+            <a href="#order" className="hover-underline hover-underline-light transition-opacity">Order</a>
+            <a href="#about" className="hover-underline hover-underline-light transition-opacity">About</a>
           </div>
 
           {/* Bottom */}

@@ -106,6 +106,72 @@ html, body {
 .stagger-5 { animation-delay: 0.5s; }
 .stagger-6 { animation-delay: 0.6s; }
 
+/* ── Hover Effects ── */
+
+/* Animated underline slide-in from left */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-caramel);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Light underline for dark backgrounds */
+.hover-underline-light::after {
+  background: var(--color-sand);
+}
+
+/* Gradient shift on Select buttons */
+.btn-select {
+  background-size: 200% 100%;
+  background-position: left center;
+  transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn-select:hover {
+  background-position: right center;
+  box-shadow: 0 6px 20px rgba(163, 199, 255, 0.4);
+}
+
+/* Glow ring on CTA / nav buttons */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent, rgba(255,255,255,0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+.btn-glow:hover::before {
+  opacity: 1;
+}
+
+/* Social button hover glow */
+.btn-social {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+.btn-social:hover {
+  box-shadow: 0 4px 20px rgba(200, 118, 26, 0.4);
+  filter: brightness(1.1);
+}
+
 /* ── Cookie Preloader ── */
 
 @keyframes cookie-spin {
