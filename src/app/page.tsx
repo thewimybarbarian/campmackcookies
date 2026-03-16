@@ -67,7 +67,7 @@ export default function Home() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none z-0"
+          className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none z-0"
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
