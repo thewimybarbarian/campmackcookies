@@ -173,19 +173,10 @@ export default function Home() {
 
         </div>
 
-        {/* ── Layered Wave Transition ── sits inside hero, extends below ── */}
-        <div className="absolute left-0 w-full z-20" style={{ bottom: "0", height: "150px", transform: "translateY(50%)" }}>
-          {/* Layer 1 – Cream (hero color) – curves down from hero */}
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,0 L1440,0 L1440,70 C1320,110 1080,40 840,80 C600,120 360,50 120,90 C60,100 0,95 0,95 Z" fill="var(--color-cream)" />
-          </svg>
-          {/* Layer 2 – Soft green (blends into menu gradient) */}
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,50 C180,20 360,100 540,65 C720,30 900,110 1080,75 C1260,40 1380,85 1440,70 L1440,200 L0,200 Z" fill="#DFF9EC" opacity="0.7" />
-          </svg>
-          {/* Layer 3 – Soft blue (accent wave) */}
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,100 C200,65 400,130 600,90 C800,50 1000,120 1200,80 C1350,60 1440,95 1440,95 L1440,200 L0,200 Z" fill="#A3C7FF" opacity="0.35" />
+        {/* ── Single clean wave divider ── */}
+        <div className="absolute left-0 w-full z-20 overflow-hidden" style={{ bottom: "-2px", height: "80px" }}>
+          <svg className="w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#DFF9EC" />
           </svg>
         </div>
 
@@ -193,22 +184,14 @@ export default function Home() {
 
       {/* Menu Section */}
       <section id="menu" className="relative pb-24" style={{ backgroundColor: "#DFF9EC" }}>
-        {/* Full Menu Background (Wood) */}
-        <div 
-          className="absolute top-0 left-0 w-full h-full z-[0]" 
+        {/* Full Menu Background (Wood) — fades in below the green top */}
+        <div
+          className="absolute top-0 left-0 w-full h-full z-[0]"
           style={{
             backgroundColor: "#F3EAE0",
             backgroundImage: "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
-            opacity: 0.95
-          }} 
-        />
-        
-        {/* Top Gradient Overlay blending into Wood */}
-        <div 
-          className="absolute top-0 left-0 w-full h-[550px] bg-gradient-to-r from-[#DFF9EC] to-[#A3C7FF] z-[1]" 
-          style={{
-            maskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)"
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 200px)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 200px)",
           }}
         />
 
