@@ -60,7 +60,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative px-6 pt-8 pb-32 md:pt-12 md:pb-48 md:px-12">
+      <section className="relative px-6 pt-8 pb-32 md:pt-12 md:pb-48 md:px-12" style={{ marginBottom: "-1px" }}>
         {/* Background video */}
         <video
           autoPlay
@@ -173,16 +173,19 @@ export default function Home() {
 
         </div>
 
+        {/* Solid color bridge to prevent any gap */}
+        <div className="absolute left-0 w-full z-20" style={{ bottom: "-4px", height: "8px", backgroundColor: "var(--color-cream)" }} />
         {/* Wavy bottom divider — extends into menu section to prevent seam */}
-        <div className="absolute left-0 w-full overflow-hidden leading-none z-20" style={{ bottom: "-2px" }}>
+        <div className="absolute left-0 w-full overflow-hidden leading-none z-20" style={{ bottom: "-30px" }}>
           <svg
-            viewBox="0 0 1440 80"
+            viewBox="0 0 1440 100"
             preserveAspectRatio="none"
-            className="w-full h-16 md:h-28"
+            className="w-full" style={{ height: "60px" }}
             xmlns="http://www.w3.org/2000/svg"
           >
+            <rect width="1440" height="40" fill="var(--color-cream)" />
             <path
-              d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
+              d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,100 L0,100 Z"
               fill="var(--color-cream)"
             />
           </svg>
@@ -190,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="relative pb-24" style={{ backgroundColor: "#DFF9EC" }}>
+      <section id="menu" className="relative pb-24" style={{ backgroundColor: "#DFF9EC", marginTop: "-1px" }}>
         {/* Full Menu Background (Wood) */}
         <div 
           className="absolute top-0 left-0 w-full h-full z-[0]" 
