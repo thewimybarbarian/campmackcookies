@@ -61,16 +61,6 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative px-6 pt-8 pb-16 md:pt-12 md:pb-24 md:px-12">
-        {/* Background video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none z-0"
-        >
-          <source src="/hero-bg.mp4" type="video/mp4" />
-        </video>
         <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center gap-8">
 
           {/* Centerpiece image */}
