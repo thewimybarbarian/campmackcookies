@@ -163,22 +163,27 @@ export default function Home() {
 
         </div>
 
-        {/* ── Single clean wave divider ── */}
-        <div className="absolute left-0 w-full z-20 overflow-hidden" style={{ bottom: "-2px", height: "80px" }}>
-          <svg className="w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#F3EAE0" />
-          </svg>
-        </div>
+        {/* Gradient fade into menu section */}
+        <div
+          className="absolute left-0 w-full z-20 pointer-events-none"
+          style={{
+            bottom: 0,
+            height: "120px",
+            background: "linear-gradient(to bottom, transparent, #F3EAE0)",
+          }}
+        />
 
       </section>
 
       {/* Menu Section */}
       <section id="menu" className="relative pb-24" style={{ backgroundColor: "#F3EAE0" }}>
-        {/* Full Menu Background (Wood) */}
+        {/* Wood texture overlay — fades in gently from top */}
         <div
           className="absolute top-0 left-0 w-full h-full z-[0]"
           style={{
             backgroundImage: "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
+            maskImage: "linear-gradient(to bottom, transparent 0px, black 300px)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0px, black 300px)",
           }}
         />
 
