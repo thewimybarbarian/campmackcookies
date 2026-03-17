@@ -166,22 +166,19 @@ export default function Home() {
         {/* ── Single clean wave divider ── */}
         <div className="absolute left-0 w-full z-20 overflow-hidden" style={{ bottom: "-2px", height: "80px" }}>
           <svg className="w-full h-full" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#DFF9EC" />
+            <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#F3EAE0" />
           </svg>
         </div>
 
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="relative pb-24" style={{ backgroundColor: "#DFF9EC" }}>
-        {/* Full Menu Background (Wood) — fades in below the green top */}
+      <section id="menu" className="relative pb-24" style={{ backgroundColor: "#F3EAE0" }}>
+        {/* Full Menu Background (Wood) */}
         <div
           className="absolute top-0 left-0 w-full h-full z-[0]"
           style={{
-            backgroundColor: "#F3EAE0",
             backgroundImage: "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
-            maskImage: "linear-gradient(to bottom, transparent 0%, black 200px)",
-            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 200px)",
           }}
         />
 
