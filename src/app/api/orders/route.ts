@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { Resend } from "resend";
 import { COOKIE_PRICES, COOKIE_NAMES, calculateBundlePrice } from "@/lib/cookies";
+import { getResend, sendCustomerConfirmation, sendAdminSMS } from "@/lib/email";
 import type { OrderPayload } from "@/lib/types";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -94,33 +92,46 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send notification email
-    const notificationEmail = process.env.ORDER_NOTIFICATION_EMAIL;
-    if (notificationEmail) {
-      try {
-        await resend.emails.send({
-          from: "Camp Mack Cookies <onboarding@resend.dev>",
+    // Send notifications (non-blocking)
+    const orderData = {
+      orderId: order.id,
+      firstName,
+      lastName,
+      email,
+      phone,
+      receivingMethod,
+      requestedDate,
+      items,
+      totalItems,
+      totalPrice,
+      specialInstructions: specialInstructions || "",
+      createdAt: order.created_at,
+    };
+
+    Promise.allSettled([
+      // Admin notification email
+      (async () => {
+        const notificationEmail = process.env.ORDER_NOTIFICATION_EMAIL;
+        if (!notificationEmail) return;
+        await getResend().emails.send({
+          from: "Camp Mack Cookie Co. <orders@campmackcookies.com>",
           to: notificationEmail,
           subject: `New Order from ${firstName} ${lastName} - $${totalPrice.toFixed(2)}`,
-          html: buildOrderEmailHtml({
-            firstName,
-            lastName,
-            email,
-            phone,
-            receivingMethod,
-            requestedDate,
-            items,
-            totalItems,
-            totalPrice,
-            specialInstructions: specialInstructions || "",
-            orderId: order.id,
-            createdAt: order.created_at,
-          }),
+          html: buildOrderEmailHtml(orderData),
         });
-      } catch (emailError) {
-        console.error("Resend email error:", emailError);
-      }
-    }
+      })(),
+      // Customer confirmation email
+      sendCustomerConfirmation(orderData),
+      // Admin SMS notification
+      sendAdminSMS(orderData),
+    ]).then((results) => {
+      const labels = ["Admin email", "Customer email", "Admin SMS"];
+      results.forEach((r, i) => {
+        if (r.status === "rejected") {
+          console.error(`${labels[i]} failed:`, r.reason);
+        }
+      });
+    });
 
     return NextResponse.json(
       { success: true, orderId: order.id },
