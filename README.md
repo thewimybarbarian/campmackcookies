@@ -1,20 +1,29 @@
-# Camp Mack Cookies
+# Camp Mack Cookie Co.
 
-A Next.js application built with the App Router, React, Tailwind CSS, and TypeScript.
-This project follows the architecture and setup guidelines from previous projects.
+**Brand + online ordering site for a handcrafted cookie bakery in Arkansas.**
 
-## Getting Started
+**Live:** https://campmackcookies.vercel.app
 
-First, run the development server:
+## Highlights
+
+- Full brand identity and site design
+- Cart and online order form for pickup & delivery
+- Email notifications for new orders
+- Password-protected admin dashboard: order table, status badges, stats, CSV export
+- SEO basics: structured data (JSON-LD), sitemap, robots.txt
+
+## Stack
+
+Next.js (App Router) · TypeScript · Tailwind CSS · Supabase · Vercel
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Requires Supabase and email environment variables (see `src/lib`).
+
+---
+Designed & built by [Jason Flick](https://chaos.flick.systems) · Hexa Technologies, LLC
